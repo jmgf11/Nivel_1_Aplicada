@@ -5,7 +5,7 @@ using UnityEngine;
 public class Impulse_2d : MonoBehaviour
 {
     public float impulseForce = 10.0f;
-
+    public GameObject planta;
     
     // Start is called before the first frame update
     
@@ -29,10 +29,19 @@ public class Impulse_2d : MonoBehaviour
             
 
             while(true){
-                GetComponent <Rigidbody2D>().AddForce(Vector2.up * impulseForce,ForceMode2D.Impulse );
 
+                
+                GetComponent <Rigidbody2D>().AddForce(Vector2.up * impulseForce,ForceMode2D.Impulse );
                 yield return new WaitForSeconds(2.0f);
+                Destroy (planta);
+                
+                
+
+
+                
+
             }
+        
         
 
     }
